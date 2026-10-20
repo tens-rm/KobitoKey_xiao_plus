@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/input_transform.h>
 
 / {
     /*
@@ -215,4 +216,12 @@
             >;
         };
     };
+};
+
+// トラックボールなどの入力デバイスに対するプロセッサの設定例
+&trackball_listener {
+    input-processors = <&zip_temp_layer 4 1500>; 
+    // 引数の意味:
+    // 1番目: 有効化したいレイヤーのインデックス (例: mouse_layerがレイヤー1なら 1)
+    // 2番目: ミリ秒単位のタイムアウト (例: 1500 なら 1.5秒間ポインタの入力が途絶えると自動でレイヤーが閉じる)
 };
