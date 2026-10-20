@@ -149,60 +149,69 @@
 
         default_layer {
             bindings = <
-&kp Q      &kp L  &kp U     &kp COMMA    &kp DOT    &kp F     &kp R        &kp Y      &kp J  &lt 4 P
-&kp E      &kp I  &kp O     &kp A        &kp MINUS  &kp K     &kp T        &kp S      &kp N  &kp H
-&kp Z      &kp X  &kp C     &kp V        &kp SEMI   &kp G     &kp D        &kp M      &kp W  &kp B
-&kp LSHFT  &mo 5  &kp LCMD  &lt2_space_repeat 2 SPACE  &kp LCTRL  &kp BSPC  &lt 1 ENTER  &kp RSHFT  &mo 5  &mt RALT SLASH
+&kp Q             &kp W         &kp E         &kp R                       &kp T                 &kp Y    &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F                       &kp G                 &kp H    &kp J  &kp K      &kp L    &kp SEMICOLON
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                       &kp B                 &kp N    &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 3 INT_HENKAN &mt LEFT_SHIFT SPACE  &mo 5    &lt 2 ENTER  &lt 2 ENTER  &kp RSHFT  &k PRINTSCREEN
             >;
         };
 
         layer1 {
-            label = "NUMBER";
+            label = "NUM_SYM";
             bindings = <
-&kp N0     &kp N1  &kp N2    &kp N3     &trans         &kp MINUS  &trans     &kp UP    &kp RG(T)  &kp RG(R)
-&kp EQUAL  &kp N4  &kp N5    &kp N6     &kp APOS       &kp PLUS   &kp LEFT   &kp DOWN  &kp RIGHT  &kp RG(N)
-&trans     &kp N7  &kp N8    &kp N9     &kp SEMICOLON  &kp ASTRK  &kp SLASH  &kp LBKT  &kp RBKT   &kp RG(L)
-&kp LSHFT  &trans  &kp LCMD  &kp LSHFT  &kp LCTRL      &trans     &trans     &trans    &trans     &trans
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5   &kp NUMBER_6          &kp NUMBER_7      &kp NUMBER_8       &kp NUMBER_9  &kp NUMBER_0
+&kp LC(A)     &kp LC(S)     &kp LC(D)     &kp LC(F)     &kp LANG2      &kp GRAVE             &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp MINUS     &kp EQUAL
+&kp LC(Z)     &kp LC(X)     &kp LC(C)     &kp LC(V)     &kp LANG1      &kp NON_US_BACKSLASH  &kp SQT           &kp COMMA          &kp PERIOD    &kp SLASH
+&trans        &trans        &trans        &trans        &trans         &trans                &trans            &trans             &trans        &trans
             >;
         };
 
         layer2 {
-            label = "FUNCTION";
+            label = "SYM";
             bindings = <
-&kp F1   &kp F2   &kp F3   &kp F4   &kp F5   &trans   &trans          &trans          &trans          &trans
-&kp F6   &kp F7   &kp F8   &kp F9   &kp F10  &trans   &kp LG(F2)      &kp LG(F1)      &kp LG(F3)      &trans
-&kp F11  &kp F12  &kp F13  &kp F14  &kp F15  &trans   &kp LG(LS(F2))  &kp LG(LS(F1))  &kp LG(LS(F3))  &trans
-&kp F16  &kp F17  &trans   &trans   &trans   &kp DEL  &trans          &trans          &trans          &trans
+&kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)       &kp LS(NUMBER_6)          &kp LS(NUMBER_7)      &kp LS(NUMBER_8)       &kp LS(NUMBER_9)  &kp LS(NUMBER_0)
+&kp TAB           &none             &kp KP_NUMBER_5   &kp BACKSPACE     &kp LANG2              &kp LS(GRAVE)             &kp LS(LEFT_BRACKET)  &kp LS(RIGHT_BRACKET)  &kp LS(MINUS)     &kp LS(EQUAL)
+&kp ESCAPE        &none             &kp KP_NUMBER_2   &kp DELETE        &kp LANG1              &kp LS(NON_US_BACKSLASH)  &kp LS(SQT)           &kp LS(COMMA)          &kp LS(PERIOD)    &kp LS(SLASH)
+&trans            &trans            &trans            &trans            &trans                 &trans                    &trans                &trans                 &trans            &trans
             >;
         };
 
         layer3 {
-            label = "MOUSE";
+            label = "FUNC";
             bindings = <
-&trans     &trans  &trans  &trans    &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &mo 4
-&trans     &trans  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&trans     &trans  &trans  &trans    &trans  &trans  &trans    &trans    &trans    &trans
-&kp LSHFT  &trans  &td0    &kp LALT  &to 0   &trans  &trans    &trans    &mo 5     &kp RALT
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp F6  &kp F7  &kp F8  &kp F9 &kp F10
+&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans &kp F11
+&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans &trans
             >;
         };
 
         layer4 {
-            label = "SCROLL";
+            label = "MOUSE";
             bindings = <
-&kp C_VOL_UP  &kp C_BRI_UP  &trans  &trans  &trans  &trans  &trans  &kp RIGHT_ALT  &kp RIGHT_SHIFT  &trans
-&kp C_VOL_DN  &kp C_BRI_DN  &trans  &trans  &trans  &trans  &trans  &trans         &trans           &trans
-&kp C_MUTE    &trans        &trans  &trans  &trans  &trans  &trans  &trans         &trans           &trans
-&kp LSHFT     &trans        &trans  &trans  &to 0   &trans  &trans  &trans         &trans           &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
             >;
         };
 
         layer5 {
-            label = "Bluetooth";
+            label = "ARROW";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans        &trans        &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &bt BT_CLR      &trans        &trans        &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &bt BT_CLR_ALL  &trans        &trans        &trans  &trans  &trans
-&kp LSHFT     &trans        &trans        &trans        &to 0           &kp LG(LBKT)  &kp LG(RBKT)  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans          &kp UP_ARROW     &trans           &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT_ARROW  &kp DOWN         &kp RIGHT_ARROW  &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans           &trans           &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &trans          &trans           &trans           &trans
+            >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans        &trans        &trans        &trans             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &trans             &trans        &trans        &trans        &trans        &trans
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans             &bootloader   &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans             &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
             >;
         };
     };
