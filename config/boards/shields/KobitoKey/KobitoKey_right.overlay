@@ -195,7 +195,7 @@
     device = <&tb_right>;
 
     input-processors =
-        <&zip_temp_layer 3 5000>,
+        <&zip_temp_layer 4 5000>,
         <&zip_xy_swap_mapper>,
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
         <&pointer_accel>;
