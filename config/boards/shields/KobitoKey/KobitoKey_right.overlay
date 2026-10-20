@@ -202,7 +202,7 @@
 
 
     scroll {
-        layers = <4>;
+        layers = <6>;
         /* No inversions: macOS natural scrolling is off, so the
          * un-inverted direction is the one that matches. */
         /* Horizontal is scaled down harder than vertical. The swap mapper
