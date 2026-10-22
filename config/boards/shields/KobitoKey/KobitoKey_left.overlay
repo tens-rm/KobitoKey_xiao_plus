@@ -40,7 +40,7 @@
          * with, which is why the two balls felt unalike. 760 = 20 * 38,
          * an exactly representable value for this sensor's 38-count
          * step. */
-        res-cpi = <760>;
+        res-cpi = <798>;
         rotation-angle = <(-25)>;
     };
 };
