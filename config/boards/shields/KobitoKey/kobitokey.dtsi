@@ -145,6 +145,19 @@
         curve-exponent = <2>;
         idle-ms = <120>;
     };
+
+    /* Shared by the cursor and scroll chains on either half. It favors the
+     * direction of travel without removing the other axis, so diagonal
+     * motion remains possible while small drift is damped. */
+    axis_lock: axis_lock {
+        compatible = "zmk,input-processor-axis-lock";
+        #input-processor-cells = <0>;
+        activation-threshold = <2>;
+        dominance-per-mille = <2000>;
+        off-axis-per-mille = <250>;
+        break-threshold = <12>;
+        release-ms = <120>;
+    };
 };
 
 
