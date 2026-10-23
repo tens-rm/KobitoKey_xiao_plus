@@ -130,7 +130,20 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&tb_left_split>;
-        
+
+    };
+
+    /* The left ball scrolls faster when spun quickly. Thresholds see raw
+     * trackball counts because this processor runs before the scalers. */
+    left_scroll_accel: left_scroll_accel {
+        compatible = "zmk,input-processor-accel";
+        #input-processor-cells = <0>;
+        slow-speed = <1500>;
+        fast-speed = <5500>;
+        slow-gain = <1000>;
+        fast-gain = <2000>;
+        curve-exponent = <2>;
+        idle-ms = <120>;
     };
 };
 

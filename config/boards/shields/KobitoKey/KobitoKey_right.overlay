@@ -157,15 +157,16 @@
      * single count still moves the pointer one; it just occasionally
      * moves two.
      *
-     * A tenth was more than the bottom wanted, so it sits at a
-     * twentieth. */
+     * Slow movement felt short of reach, so the floor is lifted to 1.10x.
+     * This only changes the lowest-speed part of the curve; fast movement
+     * still follows the existing acceleration settings. */
     pointer_accel: pointer_accel {
         compatible = "zmk,input-processor-accel";
         #input-processor-cells = <0>;
 
         slow-speed = <1500>;
         fast-speed = <5500>;
-        slow-gain = <1050>;
+        slow-gain = <1100>;
         fast-gain = <4800>;
         curve-exponent = <4>;
         idle-ms = <120>;
