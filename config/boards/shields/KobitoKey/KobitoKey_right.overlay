@@ -69,6 +69,12 @@
         status = "okay";
     };
 
+    pointer_trace: pointer_trace {
+        compatible = "kobitokey,input-processor-pointer-trace";
+        #input-processor-cells = <0>;
+        track-remainders;
+    };
+
     vbus_sense: vbus_sense {
         compatible = "kobitokey,vbus-sense";
         status = "okay";
@@ -179,6 +185,7 @@
     device = <&tb_right>;
 
     input-processors =
+        <&pointer_trace>,
         <&zip_temp_layer 4 5000>,
         <&zip_xy_swap_mapper>,
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,

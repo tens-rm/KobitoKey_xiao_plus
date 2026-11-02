@@ -1,0 +1,12 @@
+description: Pass through and optionally log relative pointer input frames
+
+compatible: "kobitokey,input-processor-pointer-trace"
+
+properties:
+  "#input-processor-cells":
+    type: int
+    required: true
+  track-remainders:
+    type: boolean
+
+input-processor-cells: []

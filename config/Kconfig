@@ -1,5 +1,13 @@
 menu "KobitoKey Haptic"
 
+config KOBITOKEY_POINTER_TRACE
+    bool "Log raw pointing input frames"
+    default n
+    depends on ZMK_POINTING
+    help
+      Log unmodified relative X/Y frames and their timing on the right
+      trackball. Enable only in a USB logging build.
+
 config KOBITOKEY_HAPTIC
     bool "KobitoKey haptic motor support"
     default y
