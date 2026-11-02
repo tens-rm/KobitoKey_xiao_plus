@@ -3,6 +3,7 @@ zephyr_library_include_directories(include)
 
 zephyr_library_sources_ifdef(CONFIG_KOBITOKEY_HAPTIC src/kobitokey_haptic.c)
 zephyr_library_sources_ifdef(CONFIG_KOBITOKEY_HAPTIC src/input_processor_haptic_right.c)
+zephyr_library_sources_ifdef(CONFIG_KOBITOKEY_MOUSE_REPORT_BATCH src/input_processor_mouse_batch.c)
 zephyr_library_sources_ifdef(CONFIG_KOBITOKEY_HAPTIC_HOLD_TICK src/kobitokey_hold_tick.c)
 
 # 左右どちらにも積む。長押しを判断するのは central だけだが、鳴らす先が

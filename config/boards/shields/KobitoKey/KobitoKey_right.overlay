@@ -63,6 +63,11 @@
         require-prior-idle-ms = <350>;
     };
 
+    mouse_report_batch: mouse_report_batch {
+        compatible = "kobitokey,input-processor-mouse-batch";
+        #input-processor-cells = <1>;
+    };
+
     haptic_right: haptic_right {
         compatible = "kobitokey,input-processor-haptic-right";
         #input-processor-cells = <0>;
@@ -182,7 +187,8 @@
         <&zip_temp_layer 4 5000>,
         <&zip_xy_swap_mapper>,
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        <&pointer_accel>;
+        <&pointer_accel>,
+        <&mouse_report_batch 12>;
 
 
     scroll {
