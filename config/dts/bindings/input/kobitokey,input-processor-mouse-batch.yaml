@@ -1,0 +1,11 @@
+description: Coalesce rapid relative mouse reports into one timed report
+
+compatible: "kobitokey,input-processor-mouse-batch"
+
+properties:
+  "#input-processor-cells":
+    type: int
+    required: true
+
+input-processor-cells:
+  - interval_ms
