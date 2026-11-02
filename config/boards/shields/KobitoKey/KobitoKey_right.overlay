@@ -163,16 +163,18 @@
      * single count still moves the pointer one; it just occasionally
      * moves two.
      *
-     * Lift the low-speed floor to 1.20x so deliberate slow movement moves
-     * the pointer farther per ball count. Fast movement still follows the
-     * existing acceleration curve. */
+     * Keep the low-speed floor at 1.00x. The trace shows deliberate motion
+     * arrives mostly as single-count frames; boosting each frame by 1.20x
+     * makes the carried fractional remainder periodically turn one count
+     * into a two-count cursor step. Passing the slow frames unchanged avoids
+     * those extra jumps. Fast movement still follows the existing curve. */
     pointer_accel: pointer_accel {
         compatible = "zmk,input-processor-accel";
         #input-processor-cells = <0>;
 
         slow-speed = <1500>;
         fast-speed = <5500>;
-        slow-gain = <1200>;
+        slow-gain = <1000>;
         fast-gain = <4800>;
         curve-exponent = <4>;
         idle-ms = <120>;
