@@ -6,6 +6,11 @@ properties:
   "#input-processor-cells":
     type: int
     required: true
+  track-remainders:
+    type: boolean
+    default: false
+    description: |
+      This processor does not need fractional input remainders.
 
 input-processor-cells:
   - interval_ms
