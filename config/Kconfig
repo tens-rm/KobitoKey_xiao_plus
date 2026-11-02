@@ -1,13 +1,5 @@
 menu "KobitoKey Haptic"
 
-config KOBITOKEY_MOUSE_REPORT_BATCH
-    bool "Batch rapid mouse reports"
-    default y if SHIELD_KOBITOKEY_RIGHT
-    depends on ZMK_POINTING
-    help
-      Coalesce rapid cursor movement reports so bursts of trackball input
-      are sent at most once per configured interval.
-
 config KOBITOKEY_HAPTIC
     bool "KobitoKey haptic motor support"
     default y
