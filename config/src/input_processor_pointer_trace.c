@@ -44,10 +44,8 @@ static int pointer_trace_handle_event(const struct device *dev,
         const int64_t gap_ms = data->last_frame_ms == 0
                                    ? -1
                                    : now_ms - data->last_frame_ms;
-        LOG_INF("pointer raw dx=%d dy=%d gap=%lldms event_ts=%lld age=%lldms",
-                data->dx, data->dy, (long long)gap_ms,
-                (long long)event->timestamp,
-                (long long)(now_ms - event->timestamp));
+        LOG_INF("pointer raw dx=%d dy=%d gap=%lldms",
+                data->dx, data->dy, (long long)gap_ms);
         data->last_frame_ms = now_ms;
         data->dx = 0;
         data->dy = 0;
