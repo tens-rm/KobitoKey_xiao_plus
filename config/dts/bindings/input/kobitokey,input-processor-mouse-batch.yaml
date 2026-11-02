@@ -8,9 +8,8 @@ properties:
     required: true
   track-remainders:
     type: boolean
-    default: false
     description: |
-      This processor does not need fractional input remainders.
+      Set on this processor node as required by ZMK's input listener.
 
 input-processor-cells:
   - interval_ms

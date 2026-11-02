@@ -66,6 +66,7 @@
     mouse_report_batch: mouse_report_batch {
         compatible = "kobitokey,input-processor-mouse-batch";
         #input-processor-cells = <1>;
+        track-remainders;
     };
 
     haptic_right: haptic_right {
