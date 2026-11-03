@@ -197,7 +197,8 @@
     scroll {
         layers = <6>;
         /* Invert vertical scrolling for the Windows-style direction. */
-        /* Horizontal is scaled down harder than vertical. The swap mapper
+        /* Match the left ball's scroll speed. Horizontal is scaled down
+         * harder than vertical. The swap mapper
          * runs before these, and the scroll mapper after sends REL_X to the
          * horizontal wheel, so zip_x_scaler is the sideways one.
          *
@@ -207,8 +208,9 @@
         input-processors =
             <&zip_xy_swap_mapper>,
             <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
-            <&zip_x_scaler 1 15>,
-            <&zip_y_scaler 1 8>,
+            <&left_scroll_accel>,
+            <&zip_x_scaler 1 20>,
+            <&zip_y_scaler 1 6>,
             <&axis_lock>,
             <&haptic_right>,
             <&zip_xy_to_scroll_mapper>;
@@ -236,10 +238,9 @@
  * role there is no layer-specific child node here; the chain below runs
  * unconditionally.
  *
- * Chain: the swap mapper to match the sensor's mounting orientation,
- * axis lock to keep a scroll from drifting sideways, and 1/8 scaling on
- * both axes before the mapper turns the movement into wheel events.
- * Both axes are inverted, to match macOS with natural scrolling off.
+ * Chain: swap to match the sensor's mounting orientation, then invert the
+ * vertical scroll axis to match the Windows-style direction used on the
+ * right ball. The left overlay applies its faster vertical scale locally.
  *
  * Deliberately no haptic processor. That one runs on the central half and
  * would buzz the right-hand motor for movement of the left-hand ball,
@@ -254,7 +255,6 @@
     input-processors =
         <&zip_xy_swap_mapper>,
         <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
-        <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
         <&zip_x_scaler 1 20>,
         <&zip_y_scaler 1 12>,
         <&axis_lock>,
